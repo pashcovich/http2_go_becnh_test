@@ -12,7 +12,6 @@ RUN export GOBIN=$PWD/bin && \
 
 FROM nginx:1.16 as final
 WORKDIR /root
-COPY cert.conf ./
 RUN apt update && \
     apt -y install vim unzip git curl && \
     openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
